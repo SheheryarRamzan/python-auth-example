@@ -19,6 +19,7 @@ jobs:
     - name: Build Docker Image
       run: |
         docker buildx create --use
+        docker buildx inspect
         docker buildx build --platform linux/amd64,linux/arm64 -t sheheryarramzan/python-auth:latest -t sheheryarramzan/python-auth:$GITHUB_SHA .
 
     - name: Login to Docker Hub
